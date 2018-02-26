@@ -1,0 +1,218 @@
+@import "utilities/variables";
+@import "utilities/fonts";
+
+body {
+  margin: 0;
+  background-color: $yrgo-color;
+  font-weight: 400;
+  font-family: 'Josefin Slab', serif;
+  width: 100%;
+  height: 100%;
+
+  canvas {
+    display: block;
+    vertical-align: bottom;
+  }
+  /* ---- particles.js container ---- */
+  #particles-js {
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+    width: 100%;
+    height: 100%;
+    background: $dark_color;
+    z-index: 0;
+    @media screen and (max-width: 900px) {
+      clip-path: polygon(0 0, 100% 0, 100% 60%, 0 97%);
+      height: 67%;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    .presentation {
+      width: 25%;
+      height: 50%;
+      z-index: 999;
+      margin-top: 6%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      @media screen and (max-width: 900px) {
+        width: 50%;
+        height: 30%;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 1.5%;
+      }
+
+      h1 {
+        font-size: calc(1.5vh + 1.5vw);
+      }
+
+      h2 {
+        font-size: calc(1.1vh + 1.1vw);
+      }
+
+      h3 {
+        font-size: calc(0.9vh + 0.9vw);
+        text-align: center;
+
+        a {
+          text-decoration: none;
+        }
+
+        span {
+          color: $yrgo-color;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      .profile_image {
+        width: 20vh;
+        height: 20vh;
+        border-radius: 50%;
+        background: url("../images/stackpic.jpg");
+        background-size: cover;
+        background-position: center;
+        border: 1px solid $yrgo-color;
+        margin-bottom: 5%;
+      }
+    }
+
+    .aboutme_button,
+    .contact_button,
+    .skills_button {
+      width: 10%;
+      height: 5%;
+      border: 1px solid $yrgo-color;
+      border-radius: 8px;
+      overflow: hidden;
+      color: #fff;
+      display: flex;
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 65%;
+      font-size: calc(1vh + 1vw);
+      @media screen and (max-width: 900px) {
+        width: 20%;
+        height: 3%;
+      }
+
+      &:hover {
+        border-color: white;
+        cursor: pointer;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+
+    .aboutme_button {
+      left: 33%;
+      top: 71%;
+      @media screen and (max-width: 900px) {
+        left: 19%;
+        top: 51%;
+      }
+    }
+
+    .skills_button {
+      margin: 0 auto;
+      top: 65%;
+      @media screen and (max-width: 900px) {
+        top: 46%;
+      }
+    }
+
+    .contact_button {
+      left: 57%;
+      top: 59%;
+      @media screen and (max-width: 900px) {
+        left: 57%;
+        top: 41%;
+      }
+    }
+
+    .about_me,
+    .contact_me,
+    .skills {
+      display: none;
+      position: absolute;
+      top: 80%;
+      z-index: 999;
+      color: #fff;
+      @media screen and (max-width: 900px) {
+        top: 58%;
+      }
+
+      h1 {
+        font-size: calc(1.5vh + 1.5vw);
+        text-align: center;
+        margin-bottom: 8%;
+      }
+
+      p {
+        line-height: 150%;
+        font-size: calc(0.7vh + 0.7vw);
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+          color: $dark_color;
+        }
+      }
+
+      .skill_bars {
+        span {
+          top: -30px;
+          left: 2%;
+          position: relative;
+          font-size: calc(1vh + 1vw);
+          color: #fff;
+        }
+      }
+
+      progress {
+        background-color: #f3f3f3;
+        border: 0;
+        height: 2.5em;
+        width: 100%;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: #fff;
+      }
+
+      progress::-webkit-progress-value {
+        background-color: $dark_color;
+      }
+
+      progress::-moz-progress-bar {
+        background-color: $dark_color;
+      }
+    }
+
+    .active {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Filip Petersson's Portfolio Website",
+  "main": "particles.js",
+  "scripts": {
+    "build:styles": "node-sass --source-map=none --output-style compressed resources/styles/style.scss public/styles/style.css",
+    "watch:styles": "node-sass -w -r resources/styles/ -o public/styles/",
+    "watch:scripts": "rollup --config --watch",
+    "build:scripts": "rollup --config --environment NODE_ENV:production",
+    "watch": "npm-run-all --parallel watch:*"
+  },
+  "keywords": [
+    "Portfolio"
+  ],
+  "author": "Filip Petersson",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-multi-entry": "^2.0.2",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0"
+  }
+}
