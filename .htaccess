@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} =off [OR]
+RewriteCond %{HTTP_HOST} !^www. [OR]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index.(html|php)
+RewriteCond %{HTTP_HOST} ^(www.)?(.+)$
+RewriteRule ^(index.(html|php))|(.*)$ https://www.%2/$3 [R=301,L]
